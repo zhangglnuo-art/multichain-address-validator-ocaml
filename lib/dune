@@ -1,0 +1,3 @@
+(library
+ (public_name multichain_address_validator)
+ (name multichain_address_validator))
