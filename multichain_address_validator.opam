@@ -1,0 +1,18 @@
+opam-version: "2.0"
+synopsis: "Offline multi-chain cryptocurrency address, Memo/Tag, and anti-poisoning validator"
+description: "Zero-dependency OCaml library validating wallet address syntax, mandatory custodial Memo/Destination Tag routing rules (XRP, XLM, ATOM, TON, HBAR, EOS), and prefix/suffix vanity address-poisoning lookalikes across 46+ blockchains."
+maintainer: ["AllSwap Security Labs <zhangglnuo@gmail.com>"]
+authors: ["AllSwap Security Labs <zhangglnuo@gmail.com>"]
+license: "MIT"
+homepage: "https://allswap.io/tools/address-validator"
+doc: "https://allswap.io/docs"
+bug-reports: "https://github.com/zhangglnuo-art/multichain-address-validator-ocaml/issues"
+depends: [
+  "ocaml" {>= "4.14.0"}
+  "dune" {>= "3.0"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  ["dune" "build" "-p" name "-j" jobs "@install" "@runtest" {with-test}]
+]
+dev-repo: "git+https://github.com/zhangglnuo-art/multichain-address-validator-ocaml.git"
